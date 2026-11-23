@@ -1,0 +1,398 @@
+﻿data.aws_availability_zones.available: Reading...
+aws_vpc.main: Refreshing state... [id=vpc-0103d0e101caf76ce]
+data.aws_availability_zones.available: Read complete after 0s [id=ap-south-1]
+aws_internet_gateway.main: Refreshing state... [id=igw-06a7323f3073fb549]
+aws_route_table.private: Refreshing state... [id=rtb-004e5576daa3e7d18]
+aws_subnet.public[0]: Refreshing state... [id=subnet-0068eb9d4a6a76f3d]
+aws_subnet.private[1]: Refreshing state... [id=subnet-0e1314a8bbb7941fb]
+aws_subnet.private[0]: Refreshing state... [id=subnet-0481c7e88c1874f0e]
+aws_subnet.public[1]: Refreshing state... [id=subnet-0310306a1924927d3]
+aws_security_group.web: Refreshing state... [id=sg-052de9cdd8427491c]
+aws_route_table.public: Refreshing state... [id=rtb-05b448f2517aa59cd]
+aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-00a0dd8f2c259eaf0]
+aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0cbb8d57d7e06deaf]
+aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-076f73e5ded3bb8c3]
+aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-03f47f80aec64a916]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_internet_gateway.main will be destroyed
+  - resource "aws_internet_gateway" "main" {
+      - arn      = "arn:aws:ec2:ap-south-1:590157535266:internet-gateway/igw-06a7323f3073fb549" -> null
+      - id       = "igw-06a7323f3073fb549" -> null
+      - owner_id = "590157535266" -> null
+      - tags     = {
+          - "Name" = "terraform-vpc-dev-igw"
+        } -> null
+      - tags_all = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-igw"
+          - "Project"     = "terraform-vpc"
+        } -> null
+      - vpc_id   = "vpc-0103d0e101caf76ce" -> null
+    }
+
+  # aws_route_table.private will be destroyed
+  - resource "aws_route_table" "private" {
+      - arn              = "arn:aws:ec2:ap-south-1:590157535266:route-table/rtb-004e5576daa3e7d18" -> null
+      - id               = "rtb-004e5576daa3e7d18" -> null
+      - owner_id         = "590157535266" -> null
+      - propagating_vgws = [] -> null
+      - route            = [] -> null
+      - tags             = {
+          - "Name" = "terraform-vpc-dev-private-rt"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-private-rt"
+          - "Project"     = "terraform-vpc"
+        } -> null
+      - vpc_id           = "vpc-0103d0e101caf76ce" -> null
+    }
+
+  # aws_route_table.public will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:ap-south-1:590157535266:route-table/rtb-05b448f2517aa59cd" -> null
+      - id               = "rtb-05b448f2517aa59cd" -> null
+      - owner_id         = "590157535266" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-06a7323f3073fb549"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "terraform-vpc-dev-public-rt"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-public-rt"
+          - "Project"     = "terraform-vpc"
+        } -> null
+      - vpc_id           = "vpc-0103d0e101caf76ce" -> null
+    }
+
+  # aws_route_table_association.private[0] will be destroyed
+  - resource "aws_route_table_association" "private" {
+      - id             = "rtbassoc-00a0dd8f2c259eaf0" -> null
+      - route_table_id = "rtb-004e5576daa3e7d18" -> null
+      - subnet_id      = "subnet-0481c7e88c1874f0e" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_route_table_association.private[1] will be destroyed
+  - resource "aws_route_table_association" "private" {
+      - id             = "rtbassoc-0cbb8d57d7e06deaf" -> null
+      - route_table_id = "rtb-004e5576daa3e7d18" -> null
+      - subnet_id      = "subnet-0e1314a8bbb7941fb" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_route_table_association.public[0] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-076f73e5ded3bb8c3" -> null
+      - route_table_id = "rtb-05b448f2517aa59cd" -> null
+      - subnet_id      = "subnet-0068eb9d4a6a76f3d" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_route_table_association.public[1] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-03f47f80aec64a916" -> null
+      - route_table_id = "rtb-05b448f2517aa59cd" -> null
+      - subnet_id      = "subnet-0310306a1924927d3" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_security_group.web will be destroyed
+  - resource "aws_security_group" "web" {
+      - arn                    = "arn:aws:ec2:ap-south-1:590157535266:security-group/sg-052de9cdd8427491c" -> null
+      - description            = "Allow HTTP and HTTPS from anywhere, SSH from a chosen IP range" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "All outbound traffic"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-052de9cdd8427491c" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "HTTP"
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "HTTPS"
+              - from_port        = 443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 443
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "SSH"
+              - from_port        = 22
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 22
+            },
+        ] -> null
+      - name                   = "terraform-vpc-dev-web-sg" -> null
+      - owner_id               = "590157535266" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Name" = "terraform-vpc-dev-web-sg"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-web-sg"
+          - "Project"     = "terraform-vpc"
+        } -> null
+      - vpc_id                 = "vpc-0103d0e101caf76ce" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_subnet.private[0] will be destroyed
+  - resource "aws_subnet" "private" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:590157535266:subnet/subnet-0481c7e88c1874f0e" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1a" -> null
+      - availability_zone_id                           = "aps1-az1" -> null
+      - cidr_block                                     = "10.0.11.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0481c7e88c1874f0e" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "590157535266" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "terraform-vpc-dev-private-1"
+          - "Tier" = "private"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-private-1"
+          - "Project"     = "terraform-vpc"
+          - "Tier"        = "private"
+        } -> null
+      - vpc_id                                         = "vpc-0103d0e101caf76ce" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_subnet.private[1] will be destroyed
+  - resource "aws_subnet" "private" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:590157535266:subnet/subnet-0e1314a8bbb7941fb" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1b" -> null
+      - availability_zone_id                           = "aps1-az3" -> null
+      - cidr_block                                     = "10.0.12.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0e1314a8bbb7941fb" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "590157535266" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "terraform-vpc-dev-private-2"
+          - "Tier" = "private"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-private-2"
+          - "Project"     = "terraform-vpc"
+          - "Tier"        = "private"
+        } -> null
+      - vpc_id                                         = "vpc-0103d0e101caf76ce" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_subnet.public[0] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:590157535266:subnet/subnet-0068eb9d4a6a76f3d" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1a" -> null
+      - availability_zone_id                           = "aps1-az1" -> null
+      - cidr_block                                     = "10.0.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0068eb9d4a6a76f3d" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "590157535266" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "terraform-vpc-dev-public-1"
+          - "Tier" = "public"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-public-1"
+          - "Project"     = "terraform-vpc"
+          - "Tier"        = "public"
+        } -> null
+      - vpc_id                                         = "vpc-0103d0e101caf76ce" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_subnet.public[1] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:590157535266:subnet/subnet-0310306a1924927d3" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1b" -> null
+      - availability_zone_id                           = "aps1-az3" -> null
+      - cidr_block                                     = "10.0.2.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0310306a1924927d3" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "590157535266" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "terraform-vpc-dev-public-2"
+          - "Tier" = "public"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-public-2"
+          - "Project"     = "terraform-vpc"
+          - "Tier"        = "public"
+        } -> null
+      - vpc_id                                         = "vpc-0103d0e101caf76ce" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_vpc.main will be destroyed
+  - resource "aws_vpc" "main" {
+      - arn                                  = "arn:aws:ec2:ap-south-1:590157535266:vpc/vpc-0103d0e101caf76ce" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.0.0.0/16" -> null
+      - default_network_acl_id               = "acl-06ae1fa88b941d30d" -> null
+      - default_route_table_id               = "rtb-0bac83f6526c6d4d4" -> null
+      - default_security_group_id            = "sg-0e797ef188f09ca95" -> null
+      - dhcp_options_id                      = "dopt-0077c0a3227072de6" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-0103d0e101caf76ce" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0bac83f6526c6d4d4" -> null
+      - owner_id                             = "590157535266" -> null
+      - tags                                 = {
+          - "Name" = "terraform-vpc-dev-vpc"
+        } -> null
+      - tags_all                             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "terraform-vpc-dev-vpc"
+          - "Project"     = "terraform-vpc"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 13 to destroy.
+
+Changes to Outputs:
+  - availability_zones     = [
+      - "ap-south-1a",
+      - "ap-south-1b",
+    ] -> null
+  - internet_gateway_id    = "igw-06a7323f3073fb549" -> null
+  - private_route_table_id = "rtb-004e5576daa3e7d18" -> null
+  - private_subnet_ids     = [
+      - "subnet-0481c7e88c1874f0e",
+      - "subnet-0e1314a8bbb7941fb",
+    ] -> null
+  - public_route_table_id  = "rtb-05b448f2517aa59cd" -> null
+  - public_subnet_ids      = [
+      - "subnet-0068eb9d4a6a76f3d",
+      - "subnet-0310306a1924927d3",
+    ] -> null
+  - vpc_cidr               = "10.0.0.0/16" -> null
+  - vpc_id                 = "vpc-0103d0e101caf76ce" -> null
+  - web_security_group_id  = "sg-052de9cdd8427491c" -> null
+aws_route_table_association.public[0]: Destroying... [id=rtbassoc-076f73e5ded3bb8c3]
+aws_route_table_association.private[1]: Destroying... [id=rtbassoc-0cbb8d57d7e06deaf]
+aws_route_table_association.private[0]: Destroying... [id=rtbassoc-00a0dd8f2c259eaf0]
+aws_route_table_association.public[1]: Destroying... [id=rtbassoc-03f47f80aec64a916]
+aws_security_group.web: Destroying... [id=sg-052de9cdd8427491c]
+aws_route_table_association.private[0]: Destruction complete after 0s
+aws_route_table_association.private[1]: Destruction complete after 0s
+aws_route_table.private: Destroying... [id=rtb-004e5576daa3e7d18]
+aws_subnet.private[0]: Destroying... [id=subnet-0481c7e88c1874f0e]
+aws_subnet.private[1]: Destroying... [id=subnet-0e1314a8bbb7941fb]
+aws_route_table_association.public[0]: Destruction complete after 0s
+aws_route_table_association.public[1]: Destruction complete after 1s
+aws_subnet.public[1]: Destroying... [id=subnet-0310306a1924927d3]
+aws_route_table.public: Destroying... [id=rtb-05b448f2517aa59cd]
+aws_subnet.public[0]: Destroying... [id=subnet-0068eb9d4a6a76f3d]
+aws_security_group.web: Destruction complete after 1s
+aws_subnet.private[0]: Destruction complete after 1s
+aws_route_table.private: Destruction complete after 1s
+aws_route_table.public: Destruction complete after 0s
+aws_internet_gateway.main: Destroying... [id=igw-06a7323f3073fb549]
+aws_subnet.private[1]: Destruction complete after 1s
+aws_subnet.public[1]: Destruction complete after 0s
+aws_subnet.public[0]: Destruction complete after 0s
+aws_internet_gateway.main: Destruction complete after 0s
+aws_vpc.main: Destroying... [id=vpc-0103d0e101caf76ce]
+aws_vpc.main: Destruction complete after 1s
+
+Destroy complete! Resources: 13 destroyed.
