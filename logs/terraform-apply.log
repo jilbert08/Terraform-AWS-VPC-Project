@@ -1,0 +1,52 @@
+﻿aws_vpc.main: Creating...
+aws_vpc.main: Still creating... [00m10s elapsed]
+aws_vpc.main: Creation complete after 14s [id=vpc-0103d0e101caf76ce]
+aws_internet_gateway.main: Creating...
+aws_route_table.private: Creating...
+aws_subnet.public[1]: Creating...
+aws_subnet.private[1]: Creating...
+aws_subnet.private[0]: Creating...
+aws_subnet.public[0]: Creating...
+aws_security_group.web: Creating...
+aws_internet_gateway.main: Creation complete after 0s [id=igw-06a7323f3073fb549]
+aws_route_table.public: Creating...
+aws_route_table.private: Creation complete after 1s [id=rtb-004e5576daa3e7d18]
+aws_subnet.private[0]: Creation complete after 1s [id=subnet-0481c7e88c1874f0e]
+aws_route_table.public: Creation complete after 2s [id=rtb-05b448f2517aa59cd]
+aws_subnet.private[1]: Creation complete after 3s [id=subnet-0e1314a8bbb7941fb]
+aws_security_group.web: Creation complete after 3s [id=sg-052de9cdd8427491c]
+aws_route_table_association.private[0]: Creating...
+aws_route_table_association.private[1]: Creating...
+aws_route_table_association.private[1]: Creation complete after 1s [id=rtbassoc-0cbb8d57d7e06deaf]
+aws_route_table_association.private[0]: Creation complete after 1s [id=rtbassoc-00a0dd8f2c259eaf0]
+aws_subnet.public[1]: Still creating... [00m10s elapsed]
+aws_subnet.public[0]: Still creating... [00m10s elapsed]
+aws_subnet.public[1]: Creation complete after 15s [id=subnet-0310306a1924927d3]
+aws_subnet.public[0]: Creation complete after 15s [id=subnet-0068eb9d4a6a76f3d]
+aws_route_table_association.public[0]: Creating...
+aws_route_table_association.public[1]: Creating...
+aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-076f73e5ded3bb8c3]
+aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-03f47f80aec64a916]
+
+Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+availability_zones = [
+  "ap-south-1a",
+  "ap-south-1b",
+]
+internet_gateway_id = "igw-06a7323f3073fb549"
+private_route_table_id = "rtb-004e5576daa3e7d18"
+private_subnet_ids = [
+  "subnet-0481c7e88c1874f0e",
+  "subnet-0e1314a8bbb7941fb",
+]
+public_route_table_id = "rtb-05b448f2517aa59cd"
+public_subnet_ids = [
+  "subnet-0068eb9d4a6a76f3d",
+  "subnet-0310306a1924927d3",
+]
+vpc_cidr = "10.0.0.0/16"
+vpc_id = "vpc-0103d0e101caf76ce"
+web_security_group_id = "sg-052de9cdd8427491c"

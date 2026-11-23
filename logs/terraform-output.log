@@ -1,0 +1,18 @@
+﻿availability_zones = [
+  "ap-south-1a",
+  "ap-south-1b",
+]
+internet_gateway_id = "igw-06a7323f3073fb549"
+private_route_table_id = "rtb-004e5576daa3e7d18"
+private_subnet_ids = [
+  "subnet-0481c7e88c1874f0e",
+  "subnet-0e1314a8bbb7941fb",
+]
+public_route_table_id = "rtb-05b448f2517aa59cd"
+public_subnet_ids = [
+  "subnet-0068eb9d4a6a76f3d",
+  "subnet-0310306a1924927d3",
+]
+vpc_cidr = "10.0.0.0/16"
+vpc_id = "vpc-0103d0e101caf76ce"
+web_security_group_id = "sg-052de9cdd8427491c"
